@@ -6,9 +6,14 @@ import PropTypes from 'prop-types'
 
 import NoteListHeader from './NoteListHeader'
 import NoteListItem from './NoteListItem'
+import NoteListEmptyItem from './NoteListEmptyItem'
+
 
 export const NoteList = (props) => {
   let renderNoteListItems = () => {
+    if (props.notes.length === 0) {
+      return <NoteListEmptyItem />
+    }
     return props.notes.map((note) => <NoteListItem key={ note._id } note={ note } /> )
   }
   return (
