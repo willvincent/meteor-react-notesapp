@@ -43,7 +43,7 @@ export class Editor extends React.Component {
 }
 
 Editor.propTypes = {
-  selectedNoteId: PropTypes.string.isRequired,
+  selectedNoteId: PropTypes.string,
   note: PropTypes.object
 }
 
