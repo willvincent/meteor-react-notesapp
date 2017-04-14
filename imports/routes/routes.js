@@ -12,6 +12,10 @@ const onEnterNotePage = (nextState) => {
   Session.set('selectedNoteId', nextState.params.id)
 }
 
+const onLeaveNotePage = (nextState) => {
+  Session.set('selectedNoteId', undefined)
+}
+
 export const onAuthChange = (isAuthenticated, currentPagePrivacy) => {
   const isUnauthenticatedPage = currentPagePrivacy === 'unauth'
   const isAuthenticatedPage = currentPagePrivacy === 'auth'
@@ -39,7 +43,7 @@ export const routes = (
       <Route path="/" component={ Login } privacy="unauth" />
       <Route path="/signup" component={ Signup } privacy="unauth" />
       <Route path="/dashboard" component={ Dashboard } privacy="auth" />
-      <Route path="/dashboard/:id" component={ Dashboard } privacy="auth" onEnter={ onEnterNotePage }/>
+      <Route path="/dashboard/:id" component={ Dashboard } privacy="auth" onEnter={ onEnterNotePage } onLeave={ onLeaveNotePage }/>
       <Route path="*" component={ NotFound } />
     </Route>
   </Router>
