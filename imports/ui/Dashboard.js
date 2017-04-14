@@ -1,7 +1,8 @@
 import React from 'react'
 
-import PrivateHeader from './PrivateHeader'
+import Editor from './Editor'
 import NoteList from './NoteList'
+import PrivateHeader from './PrivateHeader'
 
 const Dashboard = () => {
   return (
@@ -9,6 +10,7 @@ const Dashboard = () => {
       <PrivateHeader title="Your Dashboard" />
       <div className="wrapper">
         <NoteList />
+        <Editor />
       </div>
     </div>
   )
