@@ -1,3 +1,5 @@
+// Item List
+
 .item-list {
   background-color: $white;
   border: 1px solid $gray;
@@ -5,20 +7,50 @@
   width: 100%;
 }
 
+.item-list__header {
+  display: flex;
+  flex-direction: column;
+  padding: $space $large-space;
+}
+
+
+// Item
+
 .item {
-  background: $item-bg;
-  border: 1px solid $item-border-color;
-  margin-bottom: $space;
+  cursor: pointer;
   padding: $space;
+  border-left: $item-border-width solid transparent;
+  transition: background-color .3s ease, border-left .3s ease;
+
+  &:hover {
+    background-color: $light-gray;
+    border-left: $item-border-width solid $gray;
+  }
 }
 
-.item__message {
-  color: $item-text-color;
+.item--selected, .item--selected:hover {
+  background-color: lighten($green, 55%);
+  border-left: $item-border-width solid $green;
 }
 
-.item__status-message {
-  color: $item-text-color;
-  font-style: italic;
-  text-align: center;
+.item__title {
+  font-weight: normal;
+  font-size: $base-font-size;
+  margin-bottom: .4rem;
+}
+
+.item--selected .item__title {
+  font-weight: bold;
+}
+
+.item__subtitle {
+  color: $dark-gray;
   margin: 0;
+}
+
+// Empty Item
+.empty-item {
+  font-style: italic;
+  padding: $space;
+  text-align: center;
 }
