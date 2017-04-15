@@ -11,15 +11,14 @@
 
 .page-content__sidebar {
   display: flex;
+  transition: left .3s ease;
   width: 100vw;
-  
+  z-index: 1;
+
   position: fixed;
   top: $header-height;
   left: -100vw;
   bottom: 0;
-
-  transition: left .3s ease;
-
 
   @include desktop {
     padding-right: $large-space;
