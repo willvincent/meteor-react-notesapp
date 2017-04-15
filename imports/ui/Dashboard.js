@@ -7,10 +7,14 @@ import PrivateHeader from './PrivateHeader'
 const Dashboard = () => {
   return (
     <div>
-      <PrivateHeader title="Your Dashboard" />
-      <div className="wrapper">
-        <NoteList />
-        <Editor />
+      <PrivateHeader title="Notes" />
+      <div className="page-content">
+        <div className="page-content__sidebar">
+          <NoteList />
+        </div>
+        <div className="page-content__main">
+          <Editor />
+        </div>
       </div>
     </div>
   )

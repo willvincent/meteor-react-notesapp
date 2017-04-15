@@ -18,7 +18,7 @@ export const NoteList = (props) => {
     return props.notes.map((note) => <NoteListItem key={ note._id } note={ note } /> )
   }
   return (
-    <div>
+    <div className="item-list">
       <NoteListHeader />
       { renderNoteListItems() }
     </div>
