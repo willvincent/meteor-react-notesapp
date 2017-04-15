@@ -12,3 +12,9 @@
   height: 100%;
   box-shadow: 0 0 $spread rgba(0,0,0,$opacity) inset;
 }
+
+@mixin desktop() {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
